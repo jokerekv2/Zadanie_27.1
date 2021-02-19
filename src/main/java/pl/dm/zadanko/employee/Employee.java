@@ -1,6 +1,5 @@
 package pl.dm.zadanko.employee;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
@@ -18,9 +17,27 @@ public class Employee {
 
     private String name;
     private String lastName;
+    private String mail;
+    private boolean subscribedToNewsletter;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public boolean isSubscribedToNewsletter() {
+        return subscribedToNewsletter;
+    }
+
+    public void setSubscribedToNewsletter(boolean subscribedToNewsletter) {
+        this.subscribedToNewsletter = subscribedToNewsletter;
+    }
 
     public Long getId() {
         return id;

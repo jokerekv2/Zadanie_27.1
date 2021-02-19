@@ -18,12 +18,16 @@
         <thead>
             <tr>
                 <th scope="col">Employee</th>
+                <th scope="col">Email</th>
+                <th scope="col">Subsribed Newsletter?</th>
                 <th scope="col">Birthday</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="emp : ${employees}">
                 <td th:text="|${emp.name} ${emp.lastName}|"></td>
+                <td th:text="${emp.mail}"></td>
+                <td th:text="${emp.subscribedToNewsletter ? 'YES' : 'NO'}"></td>
                 <td th:text="${#temporals.format(emp.birthday, 'dd.MM.yyyy')}"></td>
             </tr>
         </tbody>
