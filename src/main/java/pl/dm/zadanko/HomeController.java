@@ -23,17 +23,4 @@ public class HomeController {
         model.addAttribute("employees", employeeRepository.findAll());
         return "home";
     }
-
-    @GetMapping("/add")
-    public String addEmployee(Model model) {
-        model.addAttribute("newEmployee", new Employee());
-        return "addEmployee";
-    }
-
-    @PostMapping("/add/employee")
-    public String addEmployee(Employee newEmployee) {
-        LocalDate birthday = newEmployee.getBirthday();
-        employeeRepository.save(newEmployee);
-        return "redirect:/";
-    }
 }
